@@ -1,0 +1,5 @@
+ImageTagSilentAlt
+=================
+
+In a call to image_tag Rails will set the 'alt' tag to the filename which isn't what you usually want.
+This plugin sets an empty alt tag unless it's already been set.
