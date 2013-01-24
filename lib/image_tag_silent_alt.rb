@@ -1,19 +1,16 @@
-#
-# Default to alt="" unless already set. An alt tag set to the image filename
-# is rarely useful.
-#
-module ActionView
-  module Helpers
-    module AssetTagHelper
+require "image_tag_silent_alt/version"
+require "action_view"
 
-      alias_method :image_tag_orig, :image_tag
+module ImageTagSilentAlt
+  module ActionViewExtensions
 
       def image_tag(source, options = {})
         options.symbolize_keys!
         options[:alt] ||= ''
-        image_tag_orig(source, options)
+        super
       end
 
-    end
   end
 end
+
+ActionView::Base.send :include, ImageTagSilentAlt::ActionViewExtensions
