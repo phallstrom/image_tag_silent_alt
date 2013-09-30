@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Set an image's alt attribute to a blank string by default.}
   gem.summary       = %q{Set an image's alt attribute to a blank string by default.}
   gem.homepage      = "https://github.com/phallstrom/image_tag_silent_alt"
+  gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
